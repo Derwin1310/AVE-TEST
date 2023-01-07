@@ -1,0 +1,41 @@
+.categories-wrapper
+  display: flex
+  flex-wrap: nowrap
+  overflow-x: scroll
+  gap: 1rem
+  width: 100%
+  padding: 1.5rem 0
+  @media (min-width: 769px)
+    display: grid
+    grid-template-rows: repeat(2, 300px)
+    grid-template-columns: repeat(3, 1fr)
+    overflow: hidden
+
+.category-item
+  display: flex
+  background-color: #0008
+  width: 300px
+  position: relative
+  justify-content: center
+  border-radius: 1rem
+  box-shadow: 2px 2px 11px -3px rgba(0,0,0,0.75)
+  border: 1px solid #08a
+  @media (min-width: 769px)
+    width: 100%
+    &:first-child
+      grid-row-start: 1
+      grid-column-start: 1
+      grid-row-end: 2
+      grid-column-end: 3
+  &__img
+    width: 300px
+    z-index: -1
+    border-radius: 1rem
+    @media (min-width: 769px)
+      width: 100%
+  &__name
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    color: white
+    font-size: 24px
