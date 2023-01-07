@@ -1,12 +1,9 @@
 import { useContext } from 'react'
 import { store } from '../../context/store'
+import 'animate.css'
 
 export const OrderSelect = () => {
-	const {
-		productList,
-		effects: { setProductList }
-	} = useContext(store)
-
+	const {  productList, effects: { setProductList } } = useContext(store)
 	const orderByPrice = isHigh => {
 		const sortedList = [...productList].sort((a, b) =>
 			isHigh ? b.price - a.price : a.price - b.price,
@@ -45,7 +42,7 @@ export const OrderSelect = () => {
 	]
 
 	return (
-		<ul className='options'>
+		<ul className={"options animate__animated animate__fadeInLeft"}>
 			{options.map(({ text, onClick }) => (
 				<li key={text} className='option' onClick={onClick}>
 					{text}
